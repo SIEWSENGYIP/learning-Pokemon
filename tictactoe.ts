@@ -69,7 +69,7 @@ console.log('............................')
 
 console.log(P1 + ' : ' + P1Symbol)
 console.log(P2 + ' : ' + P2Symbol)
-console.log('......................')
+console.log('............................')
 
 let i = 0
 while (!isP1Win && !isP2Win && i<9) {
@@ -78,12 +78,16 @@ while (!isP1Win && !isP2Win && i<9) {
     
     displayBoard(arrayBoard)
 
+    console.log('............................')
+
     console.log(currentPlayer + "'s turn")
     
     let ansPosition = question('Select position index\n')
 
     if (validateInput(arrayBoard, ansPosition)){
         arrayBoard = updateBoard(arrayBoard, ansPosition, currentPlayerSymbol)
+
+        console.log('............................')
         
         if (currentPlayerSymbol === P1Symbol){
             isP1Win = checkWinner(arrayBoard, currentPlayerSymbol)
@@ -98,19 +102,20 @@ while (!isP1Win && !isP2Win && i<9) {
         console.log("Invalid position index, please select again\n")
     }
 }
+
+displayBoard(arrayBoard)
+console.log('............................')
+
 if (isP1Win)
 {
-    displayBoard(arrayBoard)
     console.log('Congratulation! ' + P1 + ' WON!')
 }
 else if (isP2Win)
 {
-    displayBoard(arrayBoard)
     console.log('Congratulation! ' + P2 + ' WON!')
 }
 else
 {
-    displayBoard(arrayBoard)
     console.log('It is a DRAW!')
 }
 
