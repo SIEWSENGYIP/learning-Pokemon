@@ -20,7 +20,7 @@ function updateBoard(array, position, symbol)
 function validateInput(array, position)
 {
     if (position != 0 && position-1 in array){
-        if (array[position - 1] === 'O' || array[position - 1] === 'X'){
+        if (array[position - 1] === 'X' || array[position - 1] === 'Y'){
             return false
         }
         else{
@@ -53,8 +53,8 @@ function checkWinner(array, symbol)
 
 const P1 = 'Player 1'
 const P2 = 'Player 2'
-const P1Symbol = 'O'
-const P2Symbol = 'X'
+const P1Symbol = 'X'
+const P2Symbol = 'Y'
 let isP1Win = false
 let isP2Win = false
 let isP1Turn = true
